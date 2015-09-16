@@ -1,0 +1,16 @@
+{
+  "name": "atom-editplus-syntax",
+  "theme": "syntax",
+  "version": "0.0.0",
+  "description": "A basic copy of the default Editplus color scheme.",
+  "keywords": [
+    "syntax",
+    "theme",
+    "editplus"
+  ],
+  "repository": "https://github.com/chrismerat/atom-editplus-syntax",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  }
+}
