@@ -84,6 +84,14 @@ atom-text-editor .search-results .marker.current-result .region,
     &.regexp {
       color: @pink;
     }
+
+    &.js {
+      color: @black;
+    }
+  }
+
+  &.unit.scss {
+    color: @dark-red;
   }
 
   &.other.special-method {
@@ -108,13 +116,18 @@ atom-text-editor .search-results .marker.current-result .region,
   &.numeric {
     color: @black;//@orange;
 
-    &.css {
+    &.css,
+    &.scss {
       color: @dark-red;
     }
   }
 
   &.rgb-value.css {
     color: @pink;
+  }
+
+  &.w3c-standard-color-name.scss {
+    color: @red;
   }
 
   &.other.color {
@@ -160,6 +173,7 @@ atom-text-editor .search-results .marker.current-result .region,
 }
 
 .html.block,
+.html.any,
 .html .source {
   color: @blue;
 }
@@ -264,7 +278,7 @@ atom-text-editor .search-results .marker.current-result .region,
   }
 
   &.selector {
-    color: @purple;
+    color: @dark-red;
   }
 
   &.separator {
@@ -340,7 +354,8 @@ atom-text-editor .search-results .marker.current-result .region,
   }
 }
 
-.source.php {
+.source.php,
+.source.css {
   color: @dark-red;
 }
 
