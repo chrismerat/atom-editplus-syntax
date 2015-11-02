@@ -64,22 +64,18 @@ atom-text-editor .search-results .marker.current-result .region,
 
 .comment,
 .comment.html.block {
-  color: @green;//@light-gray;
+  color: @green;
 }
 
 .keyword {
-  color: @blue;//@purple;
-
   &.css {
     color: @dark-red;
   }
 
-  &.control {
-    color: @blue;//@purple;
-  }
-
   &.operator {
-    color: @dark-red;//@syntax-text-color;
+    &.assignment {
+      color: @dark-red;
+    }
 
     &.regexp {
       color: @pink;
@@ -88,6 +84,19 @@ atom-text-editor .search-results .marker.current-result .region,
     &.js {
       color: @black;
     }
+
+    &.string {
+      color: @dark-red;
+    }
+
+    &.class {
+      color: @dark-red;
+    }
+  }
+
+  &.control,
+  &.error-control {
+    color: @blue;
   }
 
   &.unit.scss {
@@ -101,10 +110,18 @@ atom-text-editor .search-results .marker.current-result .region,
   &.other.phpdoc {
     color: darken(@green, 10%);
   }
+
+  &.other.new {
+    color: @blue;
+  }
 }
 
 .storage {
-  color: @blue;//@purple;
+  &.function,
+  &.modifier,
+  &.php {
+    color: @blue;
+  }
 }
 
 .constant {
@@ -114,8 +131,6 @@ atom-text-editor .search-results .marker.current-result .region,
   }
 
   &.numeric {
-    color: @black;//@orange;
-
     &.css,
     &.scss {
       color: @dark-red;
@@ -126,12 +141,24 @@ atom-text-editor .search-results .marker.current-result .region,
     color: @pink;
   }
 
+  &.js {
+    color: @red;
+
+    &.boolean {
+      color: @blue;
+    }
+
+    &.numeric {
+      color: @dark-red;
+    }
+  }
+
   &.w3c-standard-color-name.scss {
     color: @red;
   }
 
   &.other.color {
-    color: @pink;//@cyan;
+    color: @pink;
   }
 
   &.other.symbol {
@@ -140,7 +167,7 @@ atom-text-editor .search-results .marker.current-result .region,
 }
 
 .variable {
-  color: @cyan;//@red;
+  color: @cyan;
 
   &.js {
     color: @blue;
@@ -165,37 +192,25 @@ atom-text-editor .search-results .marker.current-result .region,
 }
 
 .string {
-  color: @pink;//@green;
+  color: @pink;
 
   &.other.link {
     color: @red;
   }
 }
 
-.html.block,
-.html.any,
-.html .source {
-  color: @blue;
-}
-
 .punctuation {
   &.definition {
     &.comment {
-      color: @green;//@light-gray;
+      color: @green;
     }
 
     &.string {
       color: @pink;
     }
 
-    &.variable,
-    //&.parameters,
-    &.array {
-      color: @blue;//@syntax-text-color;
-
-      &.begin,&.end {
-        color: @dark-red;
-      }
+    &.variable {
+      color: @blue;
     }
 
     &.heading,
@@ -220,6 +235,12 @@ atom-text-editor .search-results .marker.current-result .region,
     }
   }
 
+  &.php {
+    &.array {
+      color: @dark-red;
+    }
+  }
+
   &.section.embedded {
     &.php {
       color: @dark-red;
@@ -238,7 +259,11 @@ atom-text-editor .search-results .marker.current-result .region,
   }
 
   &.function  {
-    color: @red;//@cyan;
+    &.php,
+    &.scss,
+    &.css {
+      color: @red;
+    }
 
     &.construct {
       color: @blue;
@@ -256,11 +281,15 @@ atom-text-editor .search-results .marker.current-result .region,
   }
 
   &.name.tag {
-    color: @blue;//@red;
+    color: @blue;
+  }
+
+  &.name.function {
+    color: @dark-red;
   }
 
   &.other.attribute-name {
-    color: @red;//@orange;
+    color: @red;
 
     &.css {
       color: @dark-red;
@@ -286,6 +315,10 @@ atom-text-editor .search-results .marker.current-result .region,
     color: @syntax-text-color;
   }
 
+  &.function-call {
+    color: @dark-red;
+  }
+
   &.css {
     &.property-list,
     &.property-value {
@@ -300,6 +333,18 @@ atom-text-editor .search-results .marker.current-result .region,
 
   &.less {
     color: @dark-red;
+  }
+
+  &.html {
+    &.tag {
+      color: @blue;
+    }
+  }
+
+  &.php {
+    &.embedded {
+      color: @dark-red;
+    }
   }
 }
 
@@ -354,13 +399,12 @@ atom-text-editor .search-results .marker.current-result .region,
   }
 }
 
-.source.php,
-.source.css {
+.text.css {
   color: @dark-red;
 }
 
 .source.js {
-  color: black;
+  color: @black;
 }
 
 .bracket-matcher .region {
